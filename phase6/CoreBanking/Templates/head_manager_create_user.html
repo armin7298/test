@@ -1,0 +1,57 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'semantic/semantic.min.css' %}">
+
+{% load rest_framework %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url({% static '1.jpg' %});font-weight: bold ; color:white ; font-size: 40px;">
+<div class="ui grid" style="margin-left:500px ; margin-top:0px">
+    <div class="six wide column">
+        <div>
+            <div class="ui large form">
+
+
+                <form action="{% url 'create_user' %}" method="post">
+                    {% csrf_token %}
+
+
+                    {% render_form serializer %}
+                    <div class="form-group ">
+
+                        <label>
+                            Center
+                        </label>
+
+
+                        <select class="form-control" name="center">
+                            <option value='No Center'>No Center</option>
+                            {% for center in centers %}
+                                <option value={{ center.name }}>{{ center.name }}</option>
+                            {% endfor %}
+                        </select>
+
+
+                    </div>
+
+
+                    <div class="ui horizontal divider" style="color:white">Fa-Bank Panel</div>
+
+
+                    <button class="fluid ui button yellow large">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+
+

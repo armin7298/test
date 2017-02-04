@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'semantic/semantic.min.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url({% static '1.jpg' %});font-weight: bold ; color:white ; font-size: 40px;">
+<div class="ui grid" style="margin-left:350px ; margin-top: 100px">
+    <div class="eight wide column"  >
+        <div>
+            <div class="ui large form">
+
+                        <div class="ui yellow message">
+                          <div class="header">
+                            Center with this Center ID has been defined before!!
+                          </div>
+                          <p>Go back to your <a href="{% url 'user_panel'%}">UserPanel </a></p>
+                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
